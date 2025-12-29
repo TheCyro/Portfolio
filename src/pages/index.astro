@@ -1,0 +1,338 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ProjectGrid from '../components/ProjectGrid.jsx'; // Import the new component
+
+const projects = await getCollection('projects', ({ data }) => 
+  import.meta.env.PROD ? data.draft !== true : true
+);
+
+projects.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="TheCyro | Roblox Developer">
+  
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>
+        Architecting <br />
+        <span class="text-gradient">Virtual Experiences</span>
+      </h1>
+      <p class="subtitle">
+        Specialist in Luau architecture, backend systems, and immersive gameplay loops on Roblox.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="#work" class="btn primary">View Work</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK SECTION (Now driven by React) -->
+  <section id="work" class="section-container">
+    <ProjectGrid client:load projects={projects} />
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section-container">
+    <div class="about-grid glass-panel">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          I am a Roblox Gameplay Engineer and Scripter with <strong>1+</strong> year of experience. I specialize in writing clean, modular Luau code to translate complex backend systems into seamless gameplay features.
+        </p>
+        <div class="stats-row">
+<!--
+         <div class="stat">
+            <span class="stat-num text-gradient">50M+</span>
+            <span class="stat-label">Visits Contributed</span>
+          <div class="stat">
+            <span class="stat-num text-gradient">1+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+-->
+        </div>
+      </div>
+      
+      <div class="skills-list">
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>Luau / Roblox TS</li>
+          <li>Rojo & Github CI/CD</li>
+          <li>ProfileService / DataStore2</li>
+          <li>Modular Coding</li>
+          <li>C / C++</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section-container contact-section">
+    <div class="contact-box glass-panel">
+      <h2>Let's Build Together</h2>
+      <p>Have a project in mind? I'm currently open for new opportunities.</p>
+      
+      <div class="contact-links">
+        <a href="https://devforum.roblox.com/u/InfinityCyro/summary" class="contact-btn email">
+          <span>✉️</span> Roblox devforum
+        </a>
+        <a href="https://github.com/TheCyro" target="_blank" class="contact-btn twitter">
+          <span>🐦</span> GitHub
+        </a>
+        <a href="https://discord.com/users/852985046172172321\  " target="_blank" class="contact-btn discord">
+          <span>💬</span> Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style is:global>
+  /* --- Shared Section Styles --- */
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+  }
+
+  /* React Component Styles */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: white;
+    white-space: nowrap;
+  }
+
+  .line {
+    width: 100%;
+    min-width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--card-border), transparent);
+  }
+
+  /* Search Bar */
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border-radius: 50px;
+    border: 1px solid var(--card-border);
+    color: white;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--accent-primary); }
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  /* Pagination Button */
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .show-more-btn {
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .show-more-btn:hover {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+  }
+  
+  .no-results {
+    color: var(--text-muted);
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  /* --- Hero --- */
+  .hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    padding-top: 4rem;
+  }
+
+  .hero-content { max-width: 800px; }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn.primary { background: white; color: black; }
+  .btn.secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* --- Projects Grid (CSS for React) --- */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+  }
+  .project-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+
+  .media-container {
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+  .thumbnail { width: 100%; height: 100%; object-fit: cover; }
+  .hover-video { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0; transition: opacity 0.3s; }
+  .project-card:hover .hover-video { opacity: 1; }
+
+  .card-details { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .genre { font-size: 0.75rem; text-transform: uppercase; color: var(--accent-primary); letter-spacing: 1px; font-weight: 700; }
+  h3 { color: white; font-family: var(--font-heading); font-size: 1.4rem; margin: 0; }
+  
+  .tags-container { display: flex; gap: 0.5rem; margin-top: auto; }
+  .tech-tag { font-size: 0.75rem; padding: 0.3rem 0.6rem; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-muted); }
+
+  /* --- About Section --- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+  }
+
+  .about-content h2 { font-family: var(--font-heading); font-size: 2rem; color: white; margin-bottom: 1.5rem; }
+  .about-content p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+  .stats-row { display: flex; gap: 3rem; margin-top: 2rem; border-top: 1px solid var(--card-border); padding-top: 2rem; }
+  .stat { display: flex; flex-direction: column; }
+  .stat-num { font-size: 2.5rem; font-weight: 800; font-family: var(--font-heading); line-height: 1; }
+  .stat-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+  .skills-list h3 { color: white; margin-bottom: 1.5rem; }
+  .skills-list ul { list-style: none; padding: 0; }
+  .skills-list li { margin-bottom: 0.8rem; color: var(--text-muted); padding-left: 1.2rem; position: relative; }
+  .skills-list li::before { content: "•"; color: var(--accent-primary); position: absolute; left: 0; }
+
+  /* --- Contact Section --- */
+  .contact-box {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+  }
+  .contact-box h2 { font-family: var(--font-heading); font-size: 2.5rem; color: white; margin-bottom: 1rem; }
+  .contact-box p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-btn {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .contact-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); transform: translateY(-3px); }
+
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 768px) {
+    .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .search-container { max-width: 100%; }
+    .header-left { width: 100%; }
+    
+    .section-container { padding: 4rem 1rem; }
+    .about-grid { grid-template-columns: 1fr; padding: 1.5rem; gap: 2rem; }
+    .stats-row { gap: 2rem; }
+    
+    .grid-container { grid-template-columns: 1fr; }
+    
+    .contact-box h2 { font-size: 1.8rem; }
+    .contact-links { flex-direction: column; width: 100%; }
+    .contact-btn { justify-content: center; }
+  }
+</style>

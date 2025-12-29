@@ -1,0 +1,112 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+:root {
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Colors */
+  --bg-color: #050505;       
+  --card-bg: rgba(20, 20, 20, 0.6);        
+  --card-border: rgba(255, 255, 255, 0.08);
+  
+  --text-color: #ffffff;
+  --text-muted: #9ca3af;
+  
+  /* Brand Gradients */
+  --accent-primary: #00a2ff;
+  --accent-secondary: #00ff88;
+  --gradient-brand: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  --gradient-glow: conic-gradient(from 180deg at 50% 50%, #00a2ff 0deg, #00ff88 180deg, #00a2ff 360deg);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth; 
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(circle at 50% 0%, rgba(0, 162, 255, 0.15), transparent 60%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Selection */
+::selection {
+  background: rgba(0, 162, 255, 0.3);
+  color: white;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Content Styling */
+.prose-container h1, 
+.prose-container h2, 
+.prose-container h3 {
+  font-family: var(--font-heading);
+  color: white;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+}
+
+.prose-container p {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.prose-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose-container li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-muted);
+}
+
+.prose-container li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
+.prose-container video {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}

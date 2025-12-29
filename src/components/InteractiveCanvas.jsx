@@ -7,8 +7,7 @@ export default function InteractiveCanvas() {
 
   useEffect(() => {
     if (!mountRef.current) return;
-
-    // --- Configuration ---
+    
     const isMobile = window.innerWidth < 768;
     const PARTICLE_COUNT = isMobile ? 300 : 800; // Reduce count for mobile battery/perf
     const RANGE = 40;

@@ -1,13 +1,13 @@
 ---
 const links = [
-  { name: "Work", href: "/#work" },
-  { name: "About", href: "/#about" },
+  { name: "Work", href: "/Portfolio/#work" },
+  { name: "About", href: "/Portfolio/#about" },
 ];
 ---
 
 <header class="navbar glass-panel">
   <div class="nav-content">
-    <a href="/" class="logo">
+    <a href="/Portfolio/" class="logo">
       TheCyro<span class="dot">.</span>
     </a>
 
@@ -16,7 +16,7 @@ const links = [
         <a href={link.href} class="nav-link">{link.name}</a>
       ))}
       <!-- Updated Link -->
-      <a href="/#contact" class="cta-button">
+      <a href="/Portfolio/#contact" class="cta-button">
         Contact Me
       </a>
     </nav>

@@ -2,8 +2,8 @@
 title: "Shop & Inventory System"
 description: "A comprehensive economy suite featuring a JSON-backed inventory, high-performance shop interface, and a secure, extensible currency manager."
 image: "../../assets/projects/cover.jpg"
-thumbnail: "https://thecyro.github.io/Media/Shop-InventorySystem_icture.png" 
-thumbnail_video: "https://thecyro.github.io/Media/Shop-InventorySystem_video1.mp4"
+thumbnail: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_icture.png" 
+thumbnail_video: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_video1.mp4"
 role: "UI/System Dev"
 genre: "RPG / Economy"
 stack: ["Luau", "OOP", "JSON", "Roact"]
@@ -17,16 +17,16 @@ This project is a comprehensive **economy and management suite** designed to han
 Below are demonstrations of the inventory management and shop interaction workflows.
 
 ### 1. Inventory Management
-<video controls autoplay loop muted playsinline>
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_icture.png">
   <!-- Replace with your Inventory video link -->
-  <source src="https://thecyro.github.io/Media/Shop-InventorySystem_video1.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_video1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 ### 2. Shop & Purchasing
-<video controls autoplay loop muted playsinline>
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_icture.png">
   <!-- Replace with your Shop/Currency video link -->
-  <source src="https://thecyro.github.io/Media/Shop-InventorySystem_video2.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/Shop-InventorySystem_video2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

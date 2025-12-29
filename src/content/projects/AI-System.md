@@ -2,8 +2,8 @@
 title: "Advanced NPC AI & Pathfinding"
 description: "A strictly typed, production-ready AI framework featuring modular logic, Promise-based optimization, and dynamic pathing."
 image: "../../assets/projects/cover.jpg"
-thumbnail: "https://thecyro.github.io/Media/AiSysystem-picture.png" 
-thumbnail_video: "https://thecyro.github.io/Media/AiSysystem-video.mp4"
+thumbnail: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AiSysystem-picture.png" 
+thumbnail_video: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AiSysystem-video.mp4"
 role: "UI/System Dev"
 genre: "AI / Simulation"
 stack: ["Luau", "Promise", "PathfindingService", "Rojo"]
@@ -16,8 +16,8 @@ This framework is engineered using **Strict Luau** for maximum type safety. It a
 ## Pathfinding & Logic Demo
 Below is a demonstration of the agent navigation, target tracking, and state execution.
 
-<video controls autoplay loop muted playsinline>
-  <source src="https://thecyro.github.io/Media/AiSysystem-video.mp4" type="video/mp4">
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AiSysystem-picture.png">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AiSysystem-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

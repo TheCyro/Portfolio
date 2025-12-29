@@ -2,8 +2,8 @@
 title: "FPS Engine Framework"
 description: "A strictly typed, production-ready gun system featuring server-side validation and procedural animation."
 image: "../../assets/projects/cover.jpg"
-thumbnail: "https://thecyro.github.io/Media/ShootingSystem_picture.png" 
-thumbnail_video: "https://thecyro.github.io/Media/ShootingSystem-video.mp4"
+thumbnail: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/ShootingSystem_picture.png" 
+thumbnail_video: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/ShootingSystem-video.mp4"
 role: "UI/System Dev"
 genre: "FPS / Shooter"
 stack: ["Luau", "Rojo", "Raycasting", "ContextActionService"]
@@ -16,8 +16,8 @@ This framework is engineered using **Strict Luau** for maximum type safety and p
 ## Shooting System Demo
 Below is a demonstration of the hit validation, procedural recoil recovery, and viewmodel animations.
 
-<video controls autoplay loop muted playsinline>
-  <source src="https://thecyro.github.io/Media/ShootingSystem-video.mp4" type="video/mp4">
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/ShootingSystem_picture.png">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/ShootingSystem-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

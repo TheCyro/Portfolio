@@ -82,6 +82,7 @@ export default function ProjectGrid({ projects }) {
                     src={baseImage} 
                     alt={project.data.title}
                     width={800} height={600}
+                    loading="lazy"
                     className="thumbnail"
                     style={{ viewTransitionName: `project-media-${project.slug}` }}
                   />
@@ -92,6 +93,7 @@ export default function ProjectGrid({ projects }) {
                       ref={el => videoRefs.current[project.slug] = el}
                       src={hoverVideo} 
                       muted loop playsInline 
+                      preload="metadata"
                       className="hover-video"
                     />
                   )}

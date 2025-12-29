@@ -1,9 +1,9 @@
 ---
-title: "Advanced UX & Asset Loading"
+title: "Advanced UX"
 description: "A polished UI suite featuring an immersive 3D main menu and a smart, lag-free loading system."
 image: "../../assets/projects/cover.jpg"
-thumbnail: "https://github.com/TheCyro/thecyro.github.io/blob/main/Media/AdvancedUX_picture.png?raw=true" 
-thumbnail_video: "https://thecyro.github.io/Media/AdvancedUX_video1.mp4"
+thumbnail: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_picture.png" 
+thumbnail_video: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_video1.mp4"
 role: "UI/System Dev"
 genre: "User Interface / Utility"
 stack: ["Luau", "TweenService", "ContentProvider", "SurfaceGui", "Roact"]
@@ -18,15 +18,15 @@ Below are demonstrations of the motion design in the menus and the custom logic 
 
 ### 1. Immersive 3D Menu
 Instead of a flat 2D screen, this menu is projected into the 3D world. This allows for depth effects, lighting, and particles to interact with the interface seamlessly.
-<video controls autoplay loop muted playsinline>
-  <source src="https://thecyro.github.io/Media/AdvancedUX_video1.mp4" type="video/mp4">
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_picture.png">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_video1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 ### 2. Custom Loading Animations
 A "Slot Machine" style progress counter. Instead of basic text, it uses a custom image sequence that rolls smoothly to the next number as assets finish loading.
-<video controls autoplay loop muted playsinline>
-  <source src="https://thecyro.github.io/Media/AdvancedUX_video2.mp4" type="video/mp4">
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_picture.png">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/AdvancedUX_video2.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

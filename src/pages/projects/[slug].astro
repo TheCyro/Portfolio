@@ -36,7 +36,7 @@ const showVideo = isVideo(thumbnail);
     <!-- Header Media -->
     <div class="media-wrapper glass-panel" transition:name={`project-media-${project.slug}`}>
       {showVideo ? (
-        <video src={thumbnail} autoplay loop muted playsinline controls class="hero-media" />
+        <video src={thumbnail} autoplay loop muted playsinline controls preload="metadata" class="hero-media" />
       ) : (
         /* If thumbnail is an image URL/Path, use standard img, otherwise use optimized Image component for the cover */
         thumbnail ? (
@@ -52,7 +52,7 @@ const showVideo = isVideo(thumbnail);
       <div class="main-column">
         <header>
           <div class="breadcrumbs">
-            <a href="/" class="back-link">← Projects</a> / <span class="current">{title}</span>
+            <a href="/Portfolio/" class="back-link">← Projects</a> / <span class="current">{title}</span>
           </div>
           <h1 transition:name={`project-title-${project.slug}`}>{title}</h1>
           <p class="lead">{description}</p>

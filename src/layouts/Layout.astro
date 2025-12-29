@@ -65,6 +65,14 @@ const { title, description = "Roblox Developer Portfolio", image } = Astro.props
       initLenis();
       document.addEventListener('astro:page-load', () => lenis && lenis.resize());
       document.addEventListener('astro:after-swap', () => window.scrollTo(0, 0));
+
+      // Optimize videos in markdown content
+      document.addEventListener('astro:page-load', () => {
+        const proseVideos = document.querySelectorAll('.prose-container video');
+        proseVideos.forEach(video => {
+          video.setAttribute('preload', 'metadata');
+        });
+      });
     </script>
 
     <style>

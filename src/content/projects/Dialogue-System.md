@@ -2,8 +2,8 @@
 title: "NPC Dialogue System"
 description: "A fully modular, object-oriented dialogue framework featuring advanced UI/UX capabilities and seamless integration."
 image: "../../assets/projects/cover.jpg"
-thumbnail: "https://thecyro.github.io/Media/DialogueSystem-picture.png" 
-thumbnail_video: "https://thecyro.github.io/Media/DialogueSystem-video.mp4"
+thumbnail: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/DialogueSystem-picture.png" 
+thumbnail_video: "https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/DialogueSystem-video.mp4"
 role: "UI/System Dev"
 genre: "RPG / Narrative"
 stack: ["Luau", "OOP", "Roact", "TweenService"]
@@ -16,8 +16,8 @@ This framework is a **fully modular, object-oriented system designed for flexibi
 ## Interaction Demo
 Below is a demonstration of the dynamic text rendering, branching choices, and UI animations.
 
-<video controls autoplay loop muted playsinline>
-  <source src="https://thecyro.github.io/Media/DialogueSystem-video.mp4" type="video/mp4">
+<video controls autoplay loop muted playsinline preload="metadata" poster="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/DialogueSystem-picture.png">
+  <source src="https://raw.githubusercontent.com/TheCyro/Portfolio/main/Media/DialogueSystem-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

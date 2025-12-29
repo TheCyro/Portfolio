@@ -71,7 +71,7 @@ export default function ProjectGrid({ projects }) {
             return (
               <a 
                 key={project.slug}
-                href={`/projects/${project.slug}`} 
+                href={`${import.meta.env.BASE_URL}/projects/${project.slug}`.replace('//', '/')} 
                 className="project-card glass-panel group"
                 onMouseEnter={() => hoverVideo && handleMouseEnter(project.slug)}
                 onMouseLeave={() => hoverVideo && handleMouseLeave(project.slug)}
